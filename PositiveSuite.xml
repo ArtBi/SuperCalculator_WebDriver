@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="PositiveTests">
+    <parameter name="test-uri" value="http://juliemr.github.io/protractor-demo/"/>
+    <!-- 2 options for browsers: FF | CHROME-->
+    <parameter name="browser" value="FF"/>
+    <!-- 2 options for OS: MAC | WINDOWS-->
+    <parameter name="sys" value="MAC"/>
+    <test name="PositiveTests">
+        <groups>
+            <run>
+                <include name="PositiveTests" />
+                <include name="SetUP"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="tests.TestBase"></class>
+            <class name="tests.PositiveTests"></class>
+        </classes>
+    </test>
+</suite>

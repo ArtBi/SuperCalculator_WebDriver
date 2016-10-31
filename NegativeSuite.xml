@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="NegativeTests">
+    <parameter name="test-uri" value="http://juliemr.github.io/protractor-demo/"/>
+    <!-- 2 options for browsers: FF | CHROME-->
+    <parameter name="browser" value="chrome"/>
+    <!-- 2 options for OS: MAC | WINDOWS-->
+    <parameter name="sys" value="MAC"/>
+    <test  name="NegativeTests">
+        <groups>
+            <run>
+                <include name="NegativeTests" />
+                <include name="SetUP"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="tests.TestBase"></class>
+            <class name="tests.NegativeTests"></class>
+        </classes>
+    </test>
+</suite>
