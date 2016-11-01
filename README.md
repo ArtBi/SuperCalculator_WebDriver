@@ -38,3 +38,5 @@ LoadableComponent :  https://github.com/SeleniumHQ/selenium/wiki/LoadableCompone
 PageObject : https://github.com/SeleniumHQ/selenium/wiki/PageObjects
 TestNG : http://testng.org/doc/index.html
 Fluent_interface :   https://ru.wikipedia.org/wiki/Fluent_interface
+
+Test Suites: NegativeSuite.xml	и PositiveSuite.xml
