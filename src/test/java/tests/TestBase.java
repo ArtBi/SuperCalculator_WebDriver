@@ -48,7 +48,7 @@ public class TestBase{
 
     @AfterSuite(groups = {"SetUP"})
     public void afterSuite(){
-        //webDriver.close();
+        webDriver.close();
     }
 
     protected void openURI(String uri){
