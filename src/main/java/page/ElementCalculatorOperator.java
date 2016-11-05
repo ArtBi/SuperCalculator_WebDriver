@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
  * Created by RtB on 24.10.2016.
  */
 public class ElementCalculatorOperator {
-    private static By operatorLocator = By.xpath("*//select[@ng-model='operator']");
 
     private  WebDriver driver;
 
@@ -15,8 +14,8 @@ public class ElementCalculatorOperator {
         this.driver = driver;
     }
 
-    public void  selectOperator(String operator) {
-        driver.findElement(operatorLocator).sendKeys(operator);
+    public void  selectOperator(By by,String operator) {
+        driver.findElement(by).sendKeys(operator);
     }
 
 

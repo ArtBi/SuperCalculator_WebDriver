@@ -7,15 +7,15 @@ import org.openqa.selenium.WebDriver;
  * Created by RtB on 24.10.2016.
  */
 public class ElementFirstNumberInput {
-    private By firstValueLocator = By.xpath("*//input[@ng-model='first']");
+
 
     private WebDriver driver;
 
     public ElementFirstNumberInput(WebDriver driver) {  this.driver = driver; }
 
-    public void typeFirstNumberInputValues(String firstValue){
-        driver.findElement(firstValueLocator).clear();
-        driver.findElement(firstValueLocator).sendKeys((firstValue));
+    public void typeFirstNumberInputValues(By by,String firstValue){
+        driver.findElement(by).clear();
+        driver.findElement(by).sendKeys((firstValue));
     }
 
 }

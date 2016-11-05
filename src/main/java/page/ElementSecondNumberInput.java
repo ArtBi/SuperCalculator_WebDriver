@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
  * Created by RtB on 24.10.2016.
  */
 public class ElementSecondNumberInput {
-    private static By secondValueLocator = By.xpath("*//input[@ng-model='second']");
 
     private  WebDriver driver;
 
@@ -15,10 +14,10 @@ public class ElementSecondNumberInput {
         this.driver = driver;
     }
 
-    public void typeSecondNumberInputValues(String secondValue) {
+    public void typeSecondNumberInputValues(By by,String secondValue) {
         //WebDriver driver = MainPage.getDriver();
         //String s = "";
-        driver.findElement(secondValueLocator).clear();
-        driver.findElement(secondValueLocator).sendKeys(secondValue);
+        driver.findElement(by).clear();
+        driver.findElement(by).sendKeys(secondValue);
     }
 }

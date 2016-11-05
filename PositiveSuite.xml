@@ -2,7 +2,7 @@
 <suite name="PositiveTests">
     <parameter name="test-uri" value="http://juliemr.github.io/protractor-demo/"/>
     <!-- 2 options for browsers: FF | CHROME-->
-    <parameter name="browser" value="FF"/>
+    <parameter name="browser" value="CHROME"/>
     <!-- 2 options for OS: MAC | WINDOWS-->
     <parameter name="sys" value="MAC"/>
     <test name="PositiveTests">

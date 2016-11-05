@@ -1,5 +1,6 @@
 package page;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -15,6 +16,10 @@ public class MainPage {
     private ElementFirstNumberInput elementFirstNumberInput;
     private ElementSecondNumberInput elementSecondNumberInput;
     private ElementButtonGo elementButtonGo;
+    private static By buttonLocator = By.xpath("//*[@id='gobutton']");
+    private static By operatorLocator = By.xpath("*//select[@ng-model='operator']");
+    private static By firstValueLocator = By.xpath("*//input[@ng-model='first']");
+    private static By secondValueLocator = By.xpath("*//input[@ng-model='second']");
 
 
     public MainPage(WebDriver driver) {
@@ -31,19 +36,19 @@ public class MainPage {
     }
 
     public MainPage typeFirstValue(String firstValue){
-        elementFirstNumberInput.typeFirstNumberInputValues(firstValue);
+        elementFirstNumberInput.typeFirstNumberInputValues(firstValueLocator,firstValue);
         return this;
     }
     public MainPage typeSecondValue(String secondValue){
-        elementSecondNumberInput.typeSecondNumberInputValues(secondValue);
+        elementSecondNumberInput.typeSecondNumberInputValues(secondValueLocator,secondValue);
         return this;
     }
     public MainPage typeOperatorValue(String operator){
-        operatorClass.selectOperator(operator);
+        operatorClass.selectOperator(operatorLocator,operator);
         return this;
     }
     public MainPage pushButton(){
-        elementButtonGo.pushButton();
+        elementButtonGo.pushButton(buttonLocator);
         return this;
     }
     public MainPage waitResult(){
@@ -60,5 +65,4 @@ public class MainPage {
         historyResults.printResultTable();
         return this;
     }
-
 }

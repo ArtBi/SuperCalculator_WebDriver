@@ -17,7 +17,7 @@ public class TestBase{
 
     @BeforeSuite(groups = {"SetUP"})
     @Parameters({"test-uri","browser","sys"})
-    public void setUp(@Optional("localhost:8080")String url, @Optional("FF")String browser, @Optional("PC")String sys) throws Exception {
+    public void setUp(@Optional("localhost:8080")String url, @Optional("FF")String browser, @Optional("WINDOWS")String sys) throws Exception {
         initDriver(sys,browser);
         openURI(url);
         mainPage =new MainPage(webDriver);
@@ -34,7 +34,7 @@ public class TestBase{
                 webDriver = new ChromeDriver();
             }
         }
-        else {
+        if (sys.equalsIgnoreCase("WINDOWS")){
             if (browser.equalsIgnoreCase("FF")) {
                 System.setProperty("webdriver.gecko.driver", "tools\\selenium\\geckodriver.exe");
                 webDriver = new FirefoxDriver();
@@ -48,7 +48,7 @@ public class TestBase{
 
     @AfterSuite(groups = {"SetUP"})
     public void afterSuite(){
-        webDriver.close();
+        //webDriver.close();
     }
 
     protected void openURI(String uri){
